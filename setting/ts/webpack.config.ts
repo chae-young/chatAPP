@@ -75,10 +75,16 @@ const config: Configuration = {
     publicPath: '/dist/',
   },
   devServer: {
-    historyApiFallback: true, // react router
+    historyApiFallback: true, // react router 가짜주소를 실주소처럼 해줌. 서버는 로컬호스트 3090만 앎
     port: 3090,
     devMiddleware: { publicPath: '/dist/' },
     static: { directory: path.resolve(__dirname) },
+    // proxy: {
+    //   '/api/':{
+    //     target: 'http://localhost:3095',
+    //     changeOrigin:true,
+    //   }
+    // }
   },
 };
 
